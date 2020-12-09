@@ -11,7 +11,8 @@
 		"test:final": "eslint . && npm run test:cov",
 		"test:lint": "eslint .",
 		"ci:start": "npm run test:final",
-		"ci:after": "nyc report --reporter=text-lcov | coveralls"
+		"ci:after": "nyc report --reporter=text-lcov | coveralls",
+		"prepublishOnly": "npm run test:final"
 	},
 	"repository": {
 		"type": "git",
