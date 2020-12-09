@@ -1,0 +1,41 @@
+{
+	"name": "safeify-object",
+	"description": "Makes objects safe by ensuring they don't have potentially problematic properties",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"docs": "jsdoc ./index.js ./README.md -d docs",
+		"test": "mocha",
+		"test:all": "TEST_EVERYTHING=y mocha",
+		"test:cov": "nyc --check-coverage --lines 100 --functions 100 --branches 100 --statements 100 mocha",
+		"test:final": "eslint . && npm run test:cov",
+		"test:lint": "eslint .",
+		"ci:start": "npm run test:final",
+		"ci:after": "nyc report --reporter=text-lcov | coveralls"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ARitz-Cracker/safeify-object"
+	},
+	"homepage": "https://github.com/ARitz-Cracker/safeify-object",
+	"keywords": [
+		"verify",
+		"verification",
+		"sterilize",
+		"sanitize"
+	],
+	"author": {
+		"name": "Aritz Beobide-Cardinal",
+		"email": "aritz@aritzcracker.ca"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"chai-as-promised": "^7.1.1",
+		"eslint": "^6.6.0",
+		"eslint-plugin-mocha": "^8.0.0",
+		"mocha": "^6.2.2",
+		"nyc": "^14.1.1",
+		"jsdoc": "^3.6.6"
+	}
+}
