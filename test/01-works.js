@@ -79,4 +79,9 @@ describe("Safify Object:", function(){
 		});
 		expect(stripUnsafeProperties.bind(global, evilObject)).to.throw("Cannot delete property toString");
 	});
+	it("doesn't hang on circular objects", function(){
+		const object = {};
+		object.object = object;
+		stripUnsafeProperties(object);
+	});
 });

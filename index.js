@@ -33,7 +33,6 @@ const stripUnsafeProperties = function(
 	enforceExpectedPrototype = false,
 	objectsSeen = new Set([obj])
 ){
-	const adf;
 	const keys = Object.getOwnPropertyNames(obj);
 	let key, i, value;
 	for(i = 0; i < keys.length; i += 1){
